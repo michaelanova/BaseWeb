@@ -1,0 +1,21 @@
+<label for="name">name</label>
+{{input value=category.name name="name" placeholder="name"}}
+{{category.name}}
+
+<label for="name">description</label>
+{{input value=category.description name="description" placeholder="description"}}
+{{category.description}}
+
+<label for="isPrivate">Viditelné v menu</label>
+{{input type="checkbox" name="isInMenu" checked=category.menu}}
+
+<label for="isPrivate">Soukromá kategorie</label>
+{{input type="checkbox" name="isPrivate" checked=category.private}}
+
+<button type="submit">save</button>
+
+{{#if error}}
+	{{error}}
+{{else if success}}
+	{{success}}
+{{/if}}

@@ -20,7 +20,27 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    firebase: {
+      apiKey: "AIzaSyDj2IlkR7p26YuTDy_F91-3jrPPevrwpMk",
+      authDomain: "basic-web.firebaseapp.com",
+      databaseURL: "https://basic-web.firebaseio.com",
+      projectId: "basic-web",
+      storageBucket: "basic-web.appspot.com"
+    },
+
+    /*cloudinary: {
+      uploadPreset: {
+        image: process.env.CLOUDINARY_IMAGE,
+        video: process.env.CLOUDINARY_VIDEO
+      },
+      url: process.env.CLOUDINARY_URL
+    },
+
+    torii: {
+      sessionServiceName: 'session'
+    }*/
   };
 
   if (environment === 'development') {

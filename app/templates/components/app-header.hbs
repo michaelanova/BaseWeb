@@ -1,0 +1,14 @@
+{{yield}}
+<div class="inner-menu">
+	{{#link-to "home" class="menu-link"}}
+		Domů
+	{{/link-to}}
+	{{#link-to "admin" class="menu-link"}}
+		Administrace
+	{{/link-to}}
+	{{#each notPrivateCategories as |category|}}
+		<span class="menu-link" {{action "toCategory" category}}>
+			{{category.name}}
+		</span>
+	{{/each}}
+</div>

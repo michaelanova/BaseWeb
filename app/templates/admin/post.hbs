@@ -1,0 +1,8 @@
+{{#link-to "admin.post.new" class="btn btn-default"}}
+	Nový článek
+{{/link-to}}
+<br>
+{{#each model as |post|}}
+	{{post/post-row post=post}}
+{{/each}}
+{{outlet}}

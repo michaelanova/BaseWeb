@@ -1,0 +1,17 @@
+<label for="title">title</label>
+{{input value=post.title name="title" placeholder="title"}}
+{{post.title}}
+
+<label for="title">body</label>
+{{input value=post.body name="body" placeholder="body"}}
+{{post.body}}
+
+{{select-field model=categories selected=post.category name="name" id="category" required=true}}
+
+<button type="submit">save</button>
+
+{{#if error}}
+	{{error}}
+{{else if success}}
+	{{success}}
+{{/if}}

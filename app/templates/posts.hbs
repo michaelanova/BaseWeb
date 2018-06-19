@@ -1,0 +1,7 @@
+<h1>články</h1>
+{{category}}
+{{category.name}}
+{{#each filteredPosts as |post|}}
+	{{post/post-row post=post}}
+{{/each}}
+{{outlet}}
