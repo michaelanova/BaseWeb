@@ -1,0 +1,38 @@
+<h2>Přihlásit se</h2>
+
+<br>
+
+<label>
+  E-mail
+  {{input
+    type="email"
+    value=data.email
+    autofocus="true"
+    autocomplete="email"
+    required=true}}
+</label>
+
+<label>
+  Heslo
+  {{input
+    type="password"
+    value=data.password
+    autocomplete="password"
+    required=true}}
+</label>
+
+<a href="password-recovery" class="text-primary pull-right" {{action "passwordRecovery"}}>
+  Obnova hesla
+</a>
+
+<div class="clearfix"></div>
+
+{{#if error}}
+  <div class="error">
+    <small>{{error}}</small>
+  </div>
+{{/if}}
+
+<button class="btn btn-lg btn-primary" disabled={{loading}}>
+  Potvrdit
+</button>

@@ -1,6 +1,11 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{app-header categories=model.categories transitionTo="transitionTo"}}
-{{!-- Feel free to remove this! --}}
+{{modal-component}}
 
-{{outlet}}
+{{app-header categories=model.categories transitionTo="transitionTo"}}
+
+<main>
+	Jméno{{currentUser.name}}
+	{{outlet}}
+	
+</main>
+
 {{app-footer}}

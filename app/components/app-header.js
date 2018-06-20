@@ -4,6 +4,9 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
 	router: service(),
+	session: service(),
+  	currentUser: service(),
+  	modal: service(),
 	tagName: 'nav',
 	classNames: ['app-header'],
 	categories: null,
@@ -19,6 +22,14 @@ export default Component.extend({
 			/*this.router.transitionTo('posts', {
 		        queryParams: { category: cat }
 		    });*/
-		}
+		},
+		openModal(name) {
+	      	this.get('modal').show(name, null, { isSmall: true });
+	    },
+	    signOut() {
+	      	//this.get('session').close();
+	      	this.get('currentUser').unload();
+    		return this._super();
+	    }
 	}
 });

@@ -17,10 +17,8 @@ Router.map(function() {
       this.route('edit');
     });
   });
-  this.route('home');
-  this.route('posts', function() {
-    this.route('new');
-  });
+  this.route('home', { path: '/' });
+  this.route('posts');
 });
 
 export default Router;

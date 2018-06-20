@@ -1,0 +1,8 @@
+{{#if isOpen}}
+  <div class="modal">
+    <div class="box">
+      <i class="fas fa-lg fa-times-circle modal-close" {{action "close"}}></i>
+      {{component name model=model close=(action "close")}}
+    </div>
+  </div>
+{{/if}}

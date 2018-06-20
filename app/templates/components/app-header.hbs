@@ -1,14 +1,34 @@
 {{yield}}
 <div class="inner-menu">
+	
 	{{#link-to "home" class="menu-link"}}
 		Domů
 	{{/link-to}}
-	{{#link-to "admin" class="menu-link"}}
-		Administrace
-	{{/link-to}}
-	{{#each notPrivateCategories as |category|}}
+	
+	{{!#each notPrivateCategories as |category|}}
 		<span class="menu-link" {{action "toCategory" category}}>
 			{{category.name}}
 		</span>
-	{{/each}}
+	{{!/each}}
+	{{#unless currentUser.user.id}}
+		<a href="login" class="menu-link login" {{action "openModal" "forms/login-form"}}>
+	        <i class="fas fa-fw fa-sign-in-alt"></i> Přihlásit se
+	    </a>
+	    <a href="login" class="menu-link login" {{action "openModal" "forms/signup-form"}}>
+	        <i class="fas fa-fw fa-user-plus"></i> Registrovat se
+	    </a>
+	   	{{currentUser.user.id}}
+	{{else}}
+		{{#if currentUser.isAdmin}}
+	   		{{#link-to "admin" class="menu-link"}}
+				Administrace
+			{{/link-to}}
+	   	{{/if}}
+		<p class="logged-user"><i class="fas fa-fw fa-user"></i> {{currentUser.user.email}}</p>
+		<a href="logout" class="menu-link login" {{action "signOut"}}>
+	        <i class="fas fa-fw fa-sign-out-alt"></i> Odhlásit se
+	    </a>
+	{{/unless}}
+
+	
 </div>

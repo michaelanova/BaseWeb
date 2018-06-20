@@ -1,0 +1,50 @@
+<h2>Zaregistrovat se</h2>
+
+<br>
+
+<label>
+  Jméno a příjmení
+  {{input
+    value=data.name
+    autocomplete="name"
+    required=true
+    pattern="^(?:(?:^| )\S+ *){2,}$"
+    title="alespoň 2 slova o jednom písmenu"}}
+</label>
+
+<label>
+  E-mail
+  {{input
+    type="email"
+    value=data.email
+    autocomplete="email"
+    required=true}}
+</label>
+
+<label>
+  Heslo
+  {{input
+    type="password"
+    value=data.password
+    autocomplete="password"
+    required=true}}
+</label>
+
+<label>
+  Potvrzení hesla
+  {{input
+    type="password"
+    value=data.passwordConfirm
+    autocomplete="password-confirm"
+    equired=true}}
+</label>
+
+{{#if error}}
+  <div class="error">
+    <small>{{error}}</small>
+  </div>
+{{/if}}
+
+<button class="btn btn-lg btn-primary" disabled={{loading}}>
+  Uložit
+</button>

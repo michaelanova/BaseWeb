@@ -27,8 +27,13 @@ module.exports = function(environment) {
       authDomain: "basic-web.firebaseapp.com",
       databaseURL: "https://basic-web.firebaseio.com",
       projectId: "basic-web",
-      storageBucket: "basic-web.appspot.com"
+      storageBucket: "basic-web.appspot.com",
+      messagingSenderId: "781449387635"
     },
+
+    torii: {
+      sessionServiceName: 'session'
+    }
 
     /*cloudinary: {
       uploadPreset: {
@@ -36,11 +41,7 @@ module.exports = function(environment) {
         video: process.env.CLOUDINARY_VIDEO
       },
       url: process.env.CLOUDINARY_URL
-    },
-
-    torii: {
-      sessionServiceName: 'session'
-    }*/
+    },*/
   };
 
   if (environment === 'development') {
